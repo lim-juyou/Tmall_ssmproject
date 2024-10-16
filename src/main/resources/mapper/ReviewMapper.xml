@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lgzz.mapper.ReviewMapper">
-    <resultMap id="BaseResultMap" type="cn.lgzz.pojo.Review">
+<mapper namespace="org.lzzc.mapper.ReviewMapper">
+    <resultMap id="BaseResultMap" type="org.lzzc.pojo.Review">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="content" jdbcType="VARCHAR" property="content"/>
         <result column="user_id" jdbcType="INTEGER" property="user_id"/>
@@ -41,7 +41,7 @@
     <sql id="Base_Column_List">
         id, content, user_id, product_id, createDate
     </sql>
-    <select id="selectByExample" parameterType="cn.lgzz.pojo.ReviewExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.lzzc.pojo.ReviewExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -66,13 +66,13 @@
         delete from review
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.Review" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.Review" useGeneratedKeys="true">
         insert into review (content, user_id, product_id,
         createDate)
         values (#{content,jdbcType=VARCHAR}, #{user_id,jdbcType=INTEGER}, #{product_id,jdbcType=INTEGER},
         #{createDate,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.Review"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.Review"
             useGeneratedKeys="true">
         insert into review
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -104,7 +104,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.lgzz.pojo.Review">
+    <update id="updateByPrimaryKeySelective" parameterType="org.lzzc.pojo.Review">
         update review
         <set>
             <if test="content != null">
@@ -122,7 +122,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.lgzz.pojo.Review">
+    <update id="updateByPrimaryKey" parameterType="org.lzzc.pojo.Review">
         update review
         set content = #{content,jdbcType=VARCHAR},
         user_id = #{user_id,jdbcType=INTEGER},

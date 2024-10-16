@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lgzz.mapper.ProductMapper">
-    <resultMap id="BaseResultMap" type="cn.lgzz.pojo.Product">
+<mapper namespace="org.lzzc.mapper.ProductMapper">
+    <resultMap id="BaseResultMap" type="org.lzzc.pojo.Product">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="sub_title" jdbcType="VARCHAR" property="sub_title"/>
@@ -43,7 +43,7 @@
     <sql id="Base_Column_List">
         id, name, sub_title, price, sale, stock, category_id
     </sql>
-    <select id="selectByExample" parameterType="cn.lgzz.pojo.ProductExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.lzzc.pojo.ProductExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -68,7 +68,7 @@
         delete from product
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.Product" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.Product" useGeneratedKeys="true">
         insert into product (name, sub_title, price,
         sale, stock, category_id
         )
@@ -76,7 +76,7 @@
         #{sale,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, #{category_id,jdbcType=INTEGER}
         )
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.Product"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.Product"
             useGeneratedKeys="true">
         insert into product
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -120,7 +120,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.lgzz.pojo.Product">
+    <update id="updateByPrimaryKeySelective" parameterType="org.lzzc.pojo.Product">
         update product
         <set>
             <if test="name != null">
@@ -144,7 +144,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.lgzz.pojo.Product">
+    <update id="updateByPrimaryKey" parameterType="org.lzzc.pojo.Product">
         update product
         set name = #{name,jdbcType=VARCHAR},
         sub_title = #{sub_title,jdbcType=VARCHAR},

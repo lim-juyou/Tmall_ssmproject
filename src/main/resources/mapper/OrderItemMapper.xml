@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lgzz.mapper.OrderItemMapper">
-    <resultMap id="BaseResultMap" type="cn.lgzz.pojo.OrderItem">
+<mapper namespace="org.lzzc.mapper.OrderItemMapper">
+    <resultMap id="BaseResultMap" type="org.lzzc.pojo.OrderItem">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="product_id" jdbcType="INTEGER" property="product_id"/>
         <result column="order_id" jdbcType="INTEGER" property="order_id"/>
@@ -41,7 +41,7 @@
     <sql id="Base_Column_List">
     id, product_id, order_id, user_id, number
   </sql>
-    <select id="selectByExample" parameterType="cn.lgzz.pojo.OrderItemExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.lzzc.pojo.OrderItemExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -66,14 +66,14 @@
     delete from order_item
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.OrderItem"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.OrderItem"
             useGeneratedKeys="true">
     insert into order_item (product_id, order_id, user_id, 
       number)
     values (#{product_id,jdbcType=INTEGER}, #{order_id,jdbcType=INTEGER}, #{user_id,jdbcType=INTEGER}, 
       #{number,jdbcType=INTEGER})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.OrderItem"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.OrderItem"
             useGeneratedKeys="true">
         insert into order_item
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -105,7 +105,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.lgzz.pojo.OrderItem">
+    <update id="updateByPrimaryKeySelective" parameterType="org.lzzc.pojo.OrderItem">
         update order_item
         <set>
             <if test="product_id != null">
@@ -123,7 +123,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.lgzz.pojo.OrderItem">
+    <update id="updateByPrimaryKey" parameterType="org.lzzc.pojo.OrderItem">
     update order_item
     set product_id = #{product_id,jdbcType=INTEGER},
       order_id = #{order_id,jdbcType=INTEGER},

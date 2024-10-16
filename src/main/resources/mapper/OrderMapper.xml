@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lgzz.mapper.OrderMapper">
-    <resultMap id="BaseResultMap" type="cn.lgzz.pojo.Order">
+<mapper namespace="org.lzzc.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="org.lzzc.pojo.Order">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="order_code" jdbcType="VARCHAR" property="order_code"/>
         <result column="address" jdbcType="VARCHAR" property="address"/>
@@ -50,7 +50,7 @@
     id, order_code, address, post, receiver, mobile, user_message, create_date, pay_date, 
     delivery_date, confirm_date, user_id, status
   </sql>
-    <select id="selectByExample" parameterType="cn.lgzz.pojo.OrderExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.lzzc.pojo.OrderExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -75,7 +75,7 @@
     delete from order_
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.Order" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.Order" useGeneratedKeys="true">
     insert into order_ (order_code, address, post, 
       receiver, mobile, user_message, 
       create_date, pay_date, delivery_date, 
@@ -87,7 +87,7 @@
       #{confirm_date,jdbcType=TIMESTAMP}, #{user_id,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}
       )
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.Order"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.Order"
             useGeneratedKeys="true">
         insert into order_
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -167,7 +167,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.lgzz.pojo.Order">
+    <update id="updateByPrimaryKeySelective" parameterType="org.lzzc.pojo.Order">
         update order_
         <set>
             <if test="order_code != null">
@@ -209,7 +209,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.lgzz.pojo.Order">
+    <update id="updateByPrimaryKey" parameterType="org.lzzc.pojo.Order">
     update order_
     set order_code = #{order_code,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
