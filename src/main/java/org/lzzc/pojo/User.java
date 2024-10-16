@@ -1,7 +1,10 @@
 package org.lzzc.pojo;
 
+import lombok.Setter;
+
 public class User {
-	private Integer id;
+	@Setter
+    private Integer id;
 
 	private String name;
 
@@ -11,11 +14,7 @@ public class User {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
+    public String getName() {
 		return name;
 	}
 

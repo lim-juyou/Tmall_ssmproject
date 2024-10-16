@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * ProductImage 的控制器
- *
+ *@Author: lim
  *
  */
 @Controller

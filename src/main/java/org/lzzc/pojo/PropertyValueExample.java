@@ -1,6 +1,7 @@
 package org.lzzc.pojo;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,7 @@ public class PropertyValueExample {
         distinct = false;
     }
 
+    @Getter
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
@@ -66,10 +68,6 @@ public class PropertyValueExample {
         }
 
         public List<Criterion> getAllCriteria() {
-            return criteria;
-        }
-
-        public List<Criterion> getCriteria() {
             return criteria;
         }
 

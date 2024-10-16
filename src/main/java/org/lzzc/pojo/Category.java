@@ -1,45 +1,25 @@
 package org.lzzc.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
 public class Category {
+    @Setter
     private Integer id;
 
     private String name;
 
+    @Setter
     private List<Product> products;
 
+    @Setter
     private List<List<Product>> productByRow;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    public List<List<Product>> getProductByRow() {
-        return productByRow;
-    }
-
-    public void setProductByRow(List<List<Product>> productByRow) {
-        this.productByRow = productByRow;
-    }
 }

@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * Creted by lazz on 2024/10/1
- * @author lazz
+ * @Description: CategoryController
+ * @param
+ * @return
+ * @Author: lim
+ * @Date: 2024/10/16 11:10
  */
 @Controller
 @RequestMapping("/admin")

@@ -1,11 +1,15 @@
 package org.lzzc.pojo;
 
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserExample {
+    @Setter
     protected String orderByClause;
 
+    @Setter
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -14,16 +18,8 @@ public class UserExample {
         oredCriteria = new ArrayList<Criteria>();
     }
 
-    public void setOrderByClause(String orderByClause) {
-        this.orderByClause = orderByClause;
-    }
-
     public String getOrderByClause() {
         return orderByClause;
-    }
-
-    public void setDistinct(boolean distinct) {
-        this.distinct = distinct;
     }
 
     public boolean isDistinct() {
