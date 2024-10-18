@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lgzz.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="cn.lgzz.pojo.User">
+<mapper namespace="org.lzzc.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="org.lzzc.pojo.User">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
@@ -39,7 +39,7 @@
     <sql id="Base_Column_List">
         id, name, password
     </sql>
-    <select id="selectByExample" parameterType="cn.lgzz.pojo.UserExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.lzzc.pojo.UserExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -64,11 +64,11 @@
         delete from user
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.User" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.User" useGeneratedKeys="true">
         insert into user (name, password)
         values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.User"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.User"
             useGeneratedKeys="true">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -88,7 +88,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.lgzz.pojo.User">
+    <update id="updateByPrimaryKeySelective" parameterType="org.lzzc.pojo.User">
         update user
         <set>
             <if test="name != null">
@@ -100,7 +100,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.lgzz.pojo.User">
+    <update id="updateByPrimaryKey" parameterType="org.lzzc.pojo.User">
         update user
         set name = #{name,jdbcType=VARCHAR},
         password = #{password,jdbcType=VARCHAR}

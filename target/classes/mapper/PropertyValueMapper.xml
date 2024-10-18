@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lgzz.mapper.PropertyValueMapper">
-    <resultMap id="BaseResultMap" type="cn.lgzz.pojo.PropertyValue">
+<mapper namespace="org.lzzc.mapper.PropertyValueMapper">
+    <resultMap id="BaseResultMap" type="org.lzzc.pojo.PropertyValue">
         <id column="id" jdbcType="INTEGER" property="id" />
         <result column="product_id" jdbcType="INTEGER" property="product_id" />
         <result column="property_id" jdbcType="INTEGER" property="property_id" />
@@ -39,7 +39,7 @@
     <sql id="Base_Column_List">
     id, product_id, property_id, value
   </sql>
-    <select id="selectByExample" parameterType="cn.lgzz.pojo.PropertyValueExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.lzzc.pojo.PropertyValueExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -64,13 +64,13 @@
     delete from property_value
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.PropertyValue" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.PropertyValue" useGeneratedKeys="true">
     insert into property_value (product_id, property_id, value
       )
     values (#{product_id,jdbcType=INTEGER}, #{property_id,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}
       )
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lgzz.pojo.PropertyValue" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.lzzc.pojo.PropertyValue" useGeneratedKeys="true">
         insert into property_value
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="product_id != null">
@@ -95,7 +95,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.lgzz.pojo.PropertyValue">
+    <update id="updateByPrimaryKeySelective" parameterType="org.lzzc.pojo.PropertyValue">
         update property_value
         <set>
             <if test="product_id != null">
@@ -110,7 +110,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.lgzz.pojo.PropertyValue">
+    <update id="updateByPrimaryKey" parameterType="org.lzzc.pojo.PropertyValue">
     update property_value
     set product_id = #{product_id,jdbcType=INTEGER},
       property_id = #{property_id,jdbcType=INTEGER},

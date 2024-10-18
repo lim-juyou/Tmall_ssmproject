@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
     <!-- 扫描web相关的bean -->
-    <context:component-scan base-package="cn.lgzz.controller"/>
+    <context:component-scan base-package="org.lzzc.controller"/>
 
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
@@ -33,11 +33,11 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>
-            <bean class="cn.lgzz.interceptor.LoginInterceptor"/>
+            <bean class="org.lzzc.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>
-            <bean class="cn.lgzz.interceptor.OtherInterceptor"/>
+            <bean class="org.lzzc.interceptor.OtherInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 </beans>
