@@ -2,7 +2,7 @@
 
 #下载项目
 访问仓库进行下载
-https://github.com/lim-juyou/Tmall-ssmproject-.git
+https://github.com/lim-juyou/Tmall_ssmproject.git
 
 #搭建
 1. 创建数据库，数据库的sql文件在项目db目录下
