@@ -11,8 +11,6 @@ import java.util.List;
 /**
  * ReferalLinkService 实现类
  *
- * @author: @我没有三颗心脏
- * @create: 2018-04-29-上午 10:48
  */
 @Service
 public class ReferalLinkServiceImpl implements ReferalLinkService {

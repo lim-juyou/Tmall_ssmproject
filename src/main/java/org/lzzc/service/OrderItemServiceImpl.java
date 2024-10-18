@@ -13,8 +13,7 @@ import java.util.List;
 /**
  * OrderItemService 实现类
  *
- * @author: @我没有三颗心脏
- * @create: 2018-04-29-上午 10:15
+	* @author lim
  */
 @Service
 public class OrderItemServiceImpl implements OrderItemService {

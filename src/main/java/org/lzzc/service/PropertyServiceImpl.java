@@ -11,8 +11,7 @@ import java.util.List;
 /**
  * PropertyService 实现类
  *
- * @author: @我没有三颗心脏
- * @create: 2018-04-27-下午 19:07
+ * @author lim
  */
 @Service
 public class PropertyServiceImpl implements PropertyService {
