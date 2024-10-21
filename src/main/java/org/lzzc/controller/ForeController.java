@@ -50,6 +50,20 @@ public class ForeController {
 
 
 	/**
+	 * 首页访问方法，用于处理对首页的访问请求，并向首页的JSP页面添加相关数据。
+	 *
+	 * 该方法首先调用categoryService的list方法获取所有分类信息，
+	 * 然后调用productService的fill方法填充分类的商品信息，
+	 * 接着调用productService的fillByRow方法对分类的商品信息进行进一步填充，
+	 * 最后调用referalLinkService的listAll方法获取所有推荐链接信息。
+	 *
+	 * 获取到的分类信息和推荐链接信息会被添加到Model中，
+	 * 以供首页的JSP页面展示。
+	 *
+	 * @param model 用于向JSP页面传递数据的Model对象
+	 * @return 返回字符串"index"，表示返回的视图名称为index.jsp
+	 */
+	/**
 	 * 首页访问方法，给首页的JSP页面添加以下数据：
 	 *
 	 * @param model
@@ -67,7 +81,13 @@ public class ForeController {
 
 		return "index";
 	}
-
+	/**
+	 * 显示产品信息
+	 *
+	 * @param model Spring MVC的Model对象，用于传递数据到视图层
+	 * @param product_id 要显示的产品ID
+	 * @return 返回视图名称"product"，用于展示产品信息页面
+	 */
 	@RequestMapping("/showProduct")
 	public String showProduct(Model model, Integer product_id) {
 		Product product = productService.get(product_id);

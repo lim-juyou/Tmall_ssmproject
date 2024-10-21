@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80036
 File Encoding         : 65001
 
-Date: 2024-10-18 17:58:22
+Date: 2024-10-14 20:40:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -66,20 +66,19 @@ CREATE TABLE `order_` (
   PRIMARY KEY (`id`),
   KEY `fk_order_user` (`user_id`),
   CONSTRAINT `fk_order_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of order_
 -- ----------------------------
-INSERT INTO `order_` VALUES ('1', '123456', '地球村', '', '陈雷', '19283218921', '', '1996-11-30 00:00:00', '2018-04-29 00:00:00', '2024-09-04 00:00:00', '2024-09-08 00:00:00', '1', 'delete');
-INSERT INTO `order_` VALUES ('10', '20180506143826504', '123123', '', '周沿雄', '18984219921', '', '2018-05-06 00:00:00', '2018-05-06 00:00:00', '2024-09-24 17:32:28', '2024-09-27 17:32:40', '1', 'delete');
-INSERT INTO `order_` VALUES ('11', '20180507092435428', '详细地址', '', '赵正泽', '12345678910', '卖家留言', '2022-01-01 00:00:00', '2024-09-01 00:00:00', '2024-09-18 17:31:42', '2024-10-20 17:32:22', '1', 'delete');
-INSERT INTO `order_` VALUES ('12', '20180507180327444', '123', '', '赵正泽', '12345678910', '', '2024-09-03 00:00:00', '2023-08-01 00:00:00', '2024-09-21 00:00:00', '2024-09-25 00:00:00', '1', 'delete');
-INSERT INTO `order_` VALUES ('13', '20180507205110309', '地球', '', '周沿雄', '18984219921', '', '2024-09-04 00:00:00', '2024-10-18 00:00:00', '2024-10-01 17:31:19', '2024-10-05 17:31:33', '1', 'delete');
-INSERT INTO `order_` VALUES ('14', '20180716093257383', '火星', '', '陈雷', '19283218921', '', '2024-09-27 00:00:00', '2024-10-11 00:00:00', '2024-10-07 22:18:27', '2024-10-11 17:31:10', '4', 'waitConfirm');
-INSERT INTO `order_` VALUES ('15', '20241007220630788', 'no where', '', '李福海', '17879706805', '', '2024-10-07 22:06:31', '2024-10-14 17:30:17', '2024-10-15 17:30:27', '2024-10-23 21:31:01', '1', 'waitPay');
-INSERT INTO `order_` VALUES ('16', '20241007220700609', '人民大道58号\r\n19栋学生公寓', '0000', '李福海', '17879706805', '', '2024-10-07 00:00:00', '2024-10-07 22:07:02', '2024-10-08 17:30:34', '2024-10-15 17:30:43', '1', 'waitDelivery');
-INSERT INTO `order_` VALUES ('17', '20241018171738298', '人民大道58号\r\n19栋学生公寓', '0000', '李福海', '17879706805', '', '2024-10-18 00:00:00', '2024-10-18 00:00:00', '2024-10-18 17:23:07', '2024-10-18 17:28:58', '6', 'waitConfirm');
+INSERT INTO `order_` VALUES ('1', '123456', '地球村', '0001', 'Lim', '12344782922', '', '2024-10-01 00:00:00', '2024-10-02 00:00:00', '2024-10-03 00:00:00', '2024-10-04 00:00:00', '1', 'delete');
+INSERT INTO `order_` VALUES ('10', '20240506143826504', '123123', '0002', 'Carl', '12345678910', '', '2024-10-02 00:00:00', '2024-10-03 00:00:00', '2024-10-04 20:36:29', '2024-10-05 20:36:37', '1', 'delete');
+INSERT INTO `order_` VALUES ('11', '20240507092435428', '详细地址', '0003', 'JOJO', '12345678910', '卖家留言', '2024-10-03 00:00:00', '2024-10-04 00:00:00', '2024-10-05 20:36:59', '2024-10-06 20:37:02', '1', 'delete');
+INSERT INTO `order_` VALUES ('12', '20240507180327444', '123', '0004', 'Lucy', '12345678910', '', '2024-10-05 00:00:00', '2024-10-06 00:00:00', '2024-10-07 00:00:00', '2018-05-08 00:00:00', '1', 'delete');
+INSERT INTO `order_` VALUES ('13', '20240507205110309', 'nowhere', '0005', 'Lucy', '21891382999', '', '2024-10-06 00:00:00', '2024-10-07 00:00:00', '2024-10-08 20:37:49', '2024-10-09 20:37:55', '1', 'delete');
+INSERT INTO `order_` VALUES ('14', '20240716093257383', 'nowhere', '0006', 'karl', '12321832992', '', '2024-10-10 00:00:00', '2024-10-11 00:00:00', '2024-10-12 22:18:27', '2024-10-13 20:38:20', '4', 'waitConfirm');
+INSERT INTO `order_` VALUES ('15', '20241007220630788', 'erth', '0007', 'JOJO', '12839238189', '', '2024-10-07 22:06:31', '2024-10-09 20:38:27', '2024-10-10 20:38:32', '2024-10-12 20:38:36', '1', 'waitPay');
+INSERT INTO `order_` VALUES ('16', '20241007220700609', '人民大道58号\r\n19栋学生公寓', '0000', '李福海', '17879706805', '', '2024-10-07 00:00:00', '2024-10-07 22:07:02', '2024-10-08 20:38:42', '2024-10-09 20:38:47', '1', 'waitDelivery');
 
 -- ----------------------------
 -- Table structure for order_item
@@ -98,7 +97,7 @@ CREATE TABLE `order_item` (
   CONSTRAINT `fk_order_item_order` FOREIGN KEY (`order_id`) REFERENCES `order_` (`id`),
   CONSTRAINT `fk_order_item_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   CONSTRAINT `fk_order_item_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of order_item
@@ -110,10 +109,6 @@ INSERT INTO `order_item` VALUES ('17', '4', '12', '1', '1');
 INSERT INTO `order_item` VALUES ('18', '8', '13', '1', '1');
 INSERT INTO `order_item` VALUES ('19', '5', '14', '4', '1');
 INSERT INTO `order_item` VALUES ('20', '4', '16', '1', '1');
-INSERT INTO `order_item` VALUES ('21', '5', null, '6', '2');
-INSERT INTO `order_item` VALUES ('22', '5', '17', '6', '1');
-INSERT INTO `order_item` VALUES ('23', '4', null, '6', '1');
-INSERT INTO `order_item` VALUES ('24', '33', null, '6', '1');
 
 -- ----------------------------
 -- Table structure for product
@@ -388,12 +383,12 @@ CREATE TABLE `review` (
 -- ----------------------------
 -- Records of review
 -- ----------------------------
-INSERT INTO `review` VALUES ('2', '这款短袖T恤不错哦，没想到买的号码挺准。上身效果好看，特别时尚休闲。和图片上的一样，没色差，衣服料子很好，没线头，布料是棉的，摸起来舒服，比想象的要厚实。朋友们都说好看，款式简洁大方。真的是超级赞，以后就认准这家啦，有想买的亲赶快下手哦。我是这的老顾客了，这家产品确实一直棒棒的哦。', '1', '4', '2024-09-01 10:24:02');
-INSERT INTO `review` VALUES ('3', '比较轻薄，质量蛮好的，穿起来还是比较舒适，很合身，价格也实惠！', '1', '4', '2024-09-08 10:42:07');
-INSERT INTO `review` VALUES ('6', '上身效果很好', '3', '6', '2024-09-17 10:49:09');
-INSERT INTO `review` VALUES ('7', '评价一个', '1', '6', '2024-09-20 11:01:06');
-INSERT INTO `review` VALUES ('8', 'qw54e5qwe4qw6eq4eqewq', '1', '4', '2024-09-29 18:05:09');
-INSERT INTO `review` VALUES ('9', '当评价完成之后，可以看到其他用户的评价信息', '1', '4', '2024-10-01 20:59:49');
+INSERT INTO `review` VALUES ('2', '这款短袖T恤不错哦，没想到买的号码挺准。上身效果好看，特别时尚休闲。和图片上的一样，没色差，衣服料子很好，没线头，布料是棉的，摸起来舒服，比想象的要厚实。朋友们都说好看，款式简洁大方。真的是超级赞，以后就认准这家啦，有想买的亲赶快下手哦。我是这的老顾客了，这家产品确实一直棒棒的哦。', '1', '4', '2024-10-03 10:24:02');
+INSERT INTO `review` VALUES ('3', '比较轻薄，质量蛮好的，穿起来还是比较舒适，很合身，价格也实惠！', '1', '4', '2024-10-21 10:42:07');
+INSERT INTO `review` VALUES ('6', '上身效果很好', '3', '6', '2024-10-21 10:49:09');
+INSERT INTO `review` VALUES ('7', '评价一个', '1', '6', '2024-10-03 11:01:06');
+INSERT INTO `review` VALUES ('8', 'qw54e5qwe4qw6eq4eqewq', '1', '4', '2024-10-03 18:05:09');
+INSERT INTO `review` VALUES ('9', '当评价完成之后，可以看到其他用户的评价信息', '1', '4', '2024-10-02 20:59:49');
 
 -- ----------------------------
 -- Table structure for user
@@ -409,9 +404,9 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'Luc', '12345678');
-INSERT INTO `user` VALUES ('2', 'JOJO', '123');
-INSERT INTO `user` VALUES ('3', '测试账号', '123');
-INSERT INTO `user` VALUES ('4', 'zyx', '123');
+INSERT INTO `user` VALUES ('1', 'JOJO', '12345678');
+INSERT INTO `user` VALUES ('2', 'lucy', '123');
+INSERT INTO `user` VALUES ('3', 'Karl', '123');
+INSERT INTO `user` VALUES ('4', 'aditya', '123');
 INSERT INTO `user` VALUES ('5', 'Lim', '123456');
 INSERT INTO `user` VALUES ('6', 'json', '1234');
